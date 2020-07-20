@@ -40,13 +40,31 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Middleware is basically what controls the actions the API takes to commit CRUD processing. There's two types of Middleware. There are some that work with the database, and some that work on making Other Middleware easier to process instead of having to rewrite code often
+
+Routing: Creating routers that handle Middleware for each type of resource is very handy, instead of one file having to handle all the information and processing of individual calls, it can be faster for the api not to have to process so much information all the time.
+
 - [ ] Describe Middleware?
+
+Middleware is like the process of information that does the activity you request. It takes in the information, checks it against the server/api, and then returns information based on what the middleware is built for. It also runs the CRUD commands or other things, such as logging information that is requested. 
+
+Middleware takes a request and a response, operates on them, and triggers some action (As stated above).
+
 
 - [ ] Describe a Resource?
 
+A resource is a collection of data within the database. In the case of this project, the resources are Projects and Actions.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+A response to an action, such as post, get, put, delete that sends a response on a successful completion of the task. status(200) is common http response from the api server is generally best practice to state "Hey, we completed the task without issue" And returning what was sent with a complete status message helps with verifying that the information that was sent was indeed sent.
+
 - [ ] How can we partition our application into sub-applications?
+
+By setting up different routers to process information and placing them into seperate routes (exxample for this project: /api/projects and /api/actions) it can keep code a lot cleaner than having everything in one main file, that way you can stem everything together but have different scripts handle the varous necessities and the main server file just be used just to run the server and then route everything to where it needs to make the commands. 
+
+in this case, server.js (or app.js) can just focus on Root-level stuff. Each sub-app can focus on configuring what it needs for each route without bogging up the main configuration.
+
 
 ## Minimum Viable Product
 
